@@ -3,7 +3,7 @@
  */
 const Sequelize = require("sequelize")
 const sqlOpt = require("./../conf/mysql")
-const uuid = require("node-uuid")
+const uuidV4 = require("uuid/v4")
 let sequelize = new Sequelize('myblog', sqlOpt.name, sqlOpt.pwd, {
     host: sqlOpt.host,
     dialect: 'mysql',
@@ -42,7 +42,7 @@ module.exports = {
         return user.create({
             user_name: params.name,
             user_pwd: params.pwd,
-            user_id: uuid.v4(),
+            user_id: uuidV4(),
             user_auth: 2
         })
     },
