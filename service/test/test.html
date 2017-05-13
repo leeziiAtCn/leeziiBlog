@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        button {
+            width: 150px;
+            height: 50px;
+            line-height: 50px;
+        }
+
+        #res {
+            width: 400px;
+            height: 300px;
+            border: 1px solid #0094ff;
+        }
+    </style>
+</head>
+<body>
+<script src="http://libs.baidu.com/jquery/2.0.3/jquery.min.js"></script>
+<button id="btn">test</button>
+<div id="res">xx</div>
+</body>
+</html>
+<script>
+    $(function () {
+        $("#btn").on('click', function () {
+            $.ajax({
+                url: '/user/update',
+                type: "POST",
+                contentType: 'application/json',
+                data: JSON.stringify({
+                    username: 'youke',
+                    userpwd: 'aaa',
+                    newPwd:"123"
+                }),
+//                data: {
+//                    username: 'ssss',
+//                    userpwd: 'eqw'
+//                },
+                success: function (data) {
+                    $("#res").html(JSON.stringify(data))
+                }
+            })
+        })
+    })
+</script>

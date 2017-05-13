@@ -18,5 +18,9 @@
   "homepage": "https://github.com/leeziiAtCn/leeziiBlog#readme",
   "devDependencies": {
     "express": "^4.15.2"
+  },
+  "dependencies": {
+    "mysql": "^2.13.0",
+    "sequelize": "^3.30.4"
   }
 }
